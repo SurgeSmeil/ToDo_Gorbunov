@@ -29,5 +29,12 @@ namespace Desktop
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window1 nextWindow = new Window1();
+            nextWindow.Show();
+            this.Close();
+        }
     }
 }
