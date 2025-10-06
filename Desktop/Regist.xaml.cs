@@ -1,17 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace Desktop
 {
-
-    public partial class Window1 : Regist
+    /// <summary>
+    /// Логика взаимодействия для Regist.xaml
+    /// </summary>
+    public partial class Regist : Window
     {
-        public Window1()
+        public Regist()
         {
             InitializeComponent();
-            CloseButton_Click.MainWindowInstance = this;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainW = new MainWindow();
+            mainW.Show();
+            this.Hide();
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
@@ -25,13 +43,13 @@ namespace Desktop
             {
                 MessageBox.Show("Регистрация успешно проведена!");
 
-                Regist nextWindow = new Regist();
-                nextWindow.Show();
+                Regist glavForm = new Regist();
+                glavForm.Show();
                 this.Close();
             }
             else
             {
-               
+
                 string errorMessage = "";
 
                 if (!ValidateEmail(email))
@@ -52,22 +70,6 @@ namespace Desktop
                 MessageBox.Show(errorMessage, "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        public static MainWindow? MainWindowInstance { get; set; } // Допустимо значение NULL.
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainWindowInstance == null)
-            {
-                MainWindowInstance = new MainWindow();
-            }
-
-            MainWindowInstance.Show(); // Или MainWindowInstance.ShowDialog() если это диалог
-            MainWindowInstance.Activate(); // Вывести на передний план
-
-            this.Close(); // Закрываем текущее окно
-        }
-
-
         private bool ValidateEmail(string email)
         {
             if (string.IsNullOrEmpty(email)) return false;

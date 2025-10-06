@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Desktop
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -27,14 +24,14 @@ namespace Desktop
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Regist Regist1 = new Regist();
+            Regist1.Show();
+            this.Hide();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Window1 nextWindow = new Window1();
-            nextWindow.Show();
-            this.Close();
+
         }
     }
 }

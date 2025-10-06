@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Войти" HorizontalAlignment="Left" Margin="400,287,0,0" VerticalAlignment="Top" Height="48" Width="326" Background="#FFF96060" Foreground="White" BorderBrush="{x:Null}" FontSize="18">
+        <Button Content="Войти" HorizontalAlignment="Left" Margin="400,287,0,0" VerticalAlignment="Top" Height="48" Width="326" Background="#FFF96060" Foreground="White" BorderBrush="{x:Null}" FontSize="18" Click="Button_Click_1">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15 15 5 5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Регистрация" HorizontalAlignment="Left" Margin="401,351,0,0" VerticalAlignment="Top" Height="48" Width="327" Background="#FFF96060" Foreground="White" BorderBrush="{x:Null}" FontSize="18" Click="Button_Click_1">
+        <Button Content="Регистрация" HorizontalAlignment="Left" Margin="401,351,0,0" VerticalAlignment="Top" Height="48" Width="327" Background="#FFF96060" Foreground="White" BorderBrush="{x:Null}" FontSize="18" Click="Button_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5 5 15 15"/>
