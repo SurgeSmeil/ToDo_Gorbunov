@@ -33,5 +33,10 @@ namespace Desktop
         {
 
         }
+        
+        private void ChangePass_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

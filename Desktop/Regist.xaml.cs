@@ -42,8 +42,7 @@ namespace Desktop
             if (ValidateEmail(email) && ValidatePassword(password) && ValidateName(name) && password == password1)
             {
                 MessageBox.Show("Регистрация успешно проведена!");
-
-                Regist glavForm = new Regist();
+                Main_empty glavForm = new Main_empty();
                 glavForm.Show();
                 this.Close();
             }

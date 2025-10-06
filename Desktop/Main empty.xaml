@@ -1,0 +1,22 @@
+﻿<Window x:Class="Desktop.Main_empty"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop"
+        mc:Ignorable="d"
+        Title="Main_empty" Height="450" Width="800">
+    <Grid>
+        <Image Margin="0,0,693,347" Source="/Image1.png" Stretch="Fill"/>
+        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="143,72,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Создайте свою первую задачу!" HorizontalAlignment="Left" Margin="143,143,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Button Content="Создать первую задачу" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="62" Width="272" Background="#FFF96060" BorderBrush="{x:Null}" Foreground="White" FontSize="20">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10 10 10 10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>
