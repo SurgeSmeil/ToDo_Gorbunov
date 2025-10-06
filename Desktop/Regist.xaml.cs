@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Desktop
 {
-    /// <summary>
-    /// Логика взаимодействия для Regist.xaml
-    /// </summary>
     public partial class Regist : Window
     {
         public Regist()
