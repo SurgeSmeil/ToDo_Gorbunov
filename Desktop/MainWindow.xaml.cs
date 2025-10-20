@@ -29,9 +29,11 @@ namespace Desktop
             this.Hide();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
-
+            Main_empty MainE = new Main_empty();
+            MainE.Show();
+            this.Hide();
         }
         
         private void ChangePass_Click(object sender, RoutedEventArgs e)

@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -22,6 +23,42 @@ namespace Desktop
         public Main_empty()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
+        private void ChangePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Image files (*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg",
+                Title = "Выберите новое фото профиля"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Загрузка нового изображения
+                string selectedFilePath = openFileDialog.FileName;
+                MessageBox.Show($"Выбрано новое фото: {System.IO.Path.GetFileName(selectedFilePath)}");
+                avatarImage.Source = new BitmapImage(new Uri(selectedFilePath));
+            }
+        }
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход из профиля",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                MessageBox.Show("Выход выполнен успешно!");
+                MainWindow MainW = new MainWindow();
+                MainW.Show();
+                this.Hide();
+            }
         }
     }
 }
