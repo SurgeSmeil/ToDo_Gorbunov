@@ -33,9 +33,9 @@
         </Image>
         <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="392,42,0,0" VerticalAlignment="Top" Height="50" Width="342" FontSize="28"/>
         <Label Content="Почта" HorizontalAlignment="Left" Margin="392,121,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Margin="400,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" BorderBrush="{x:Null}" CaretBrush="Black" Background="White" Foreground="#FFC2C2C2" Text="Введите почту"/>
+        <TextBox x:Name="LoginTextBox" HorizontalAlignment="Left" Margin="400,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" BorderBrush="{x:Null}" CaretBrush="Black" Background="White" Foreground="#FFC2C2C2" Text="Введите почту"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="392,183,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.244,0.62"/>
-        <TextBox HorizontalAlignment="Left" Margin="400,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Background="{x:Null}" BorderBrush="{x:Null}" Text="Введите пароль" Foreground="#FFC2C2C2"/>
+        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="400,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326" Background="{x:Null}" BorderBrush="{x:Null}" Text="Введите пароль" Foreground="#FFC2C2C2"/>
         <Button x:Name="ChangePass" Content="Восстановить пароль" HorizontalAlignment="Left" Margin="605,248,0,0" VerticalAlignment="Top" Click="Button_Click" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="14"/>
         <Border BorderBrush="#FFC2C2C2" BorderThickness="1" HorizontalAlignment="Left" Height="0" Margin="401,235,0,0" VerticalAlignment="Top" Width="326" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
@@ -67,5 +67,6 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
+        <Label x:Name="ErrorMessageLabel" Content="" HorizontalAlignment="Left" Margin="398,249,0,0" VerticalAlignment="Top" Foreground="Red"/>
     </Grid>
 </Window>

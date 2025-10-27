@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,14 +39,22 @@ namespace Desktop
 
             if (ValidateEmail(email) && ValidatePassword(password) && ValidateName(name) && password == password1)
             {
-                MessageBox.Show("Регистрация успешно проведена!");
-                Main_empty glavForm = new Main_empty();
-                glavForm.Show();
-                this.Close();
+                if (UserRepository.RegisterUser(email, password, name))
+                {
+                    MessageBox.Show("Регистрация успешно проведена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    //Переход на другую форму
+                    Main_empty glavForm = new Main_empty();
+                    glavForm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь с таким email уже существует", "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {
-
                 string errorMessage = "";
 
                 if (!ValidateEmail(email))
@@ -63,9 +72,15 @@ namespace Desktop
                     errorMessage += "Имя короче 3 симв.\n";
                 }
 
+                if (password != password1)
+                {
+                    errorMessage += "Пароли не совпадают\n";
+                }
+
                 MessageBox.Show(errorMessage, "Ошибка регистрации", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
         private bool ValidateEmail(string email)
         {
             if (string.IsNullOrEmpty(email)) return false;
